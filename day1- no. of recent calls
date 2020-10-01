@@ -1,0 +1,19 @@
+class RecentCounter {
+    ArrayList<Integer> requests = new ArrayList<>();
+    public RecentCounter() {
+        
+    }
+    
+    public int ping(int t) {
+        this.requests.add(t);
+        int leftRange = t-3000;
+        int rightRange = t;
+        int count=0;
+        for(Integer num:this.requests){
+            if(num>=leftRange && num<=rightRange){
+                count++;
+            }
+        }
+        return count;
+    }
+}
